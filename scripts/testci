@@ -1,0 +1,14 @@
+#cloud-config
+repo_update: true
+repo_upgrade: all
+
+# Add user bob, add ssh-key and add to admin group
+users:
+  - default
+  - name: bob
+    primary-group: bob
+    groups: admin
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    ssh-authorized-keys:
+     - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCd/YoDqGNbZeg2ZeKk634Izmhvji1ZwR4VyDo0vweug+GmUEQMI/1I3QzRa9zSetp9yZM7PKtlJtaFD8hlaO++DznfGewl+3qFuv7mc/y+Mp81lPGOPG/y2y/HCkIFGUHP5ONYNyKaHU9vL3vSSDvSmZQYhS3kZoiPxVeROQkagYp5HpNKF0N8Y9MUGr61varUwzCikxvHiETmc4QhByhmOy3DCUIdPBBOvsvj1Z4UoOEPwY7fIzWU8kjmiw2RAhoqkYlEEW87DH6pOQlRemMxDD+7W7Uix1E8C1rXQV1rjtbdCNmRr6q38ZEawKCfNhY/sAsaLdCM9MVEkHNRlmjn nomad@cybrmerc.org
+     
